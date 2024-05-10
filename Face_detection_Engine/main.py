@@ -42,7 +42,7 @@ while True:
         agePred = ageNet.forward()
         age = ageList[agePred[0].argmax()]
         label="{},{}".format(gender ,age)
-        cv2.putText(frame,label,(bbox[0],bbox[1]-10), cv2.FONT_HERSHEY_PLAIN,0.8,(255,255,255),2)
+        cv2.putText(frame,label,(bbox[0],bbox[1]-10), cv2.FONT_HERSHEY_SIMPLEX,0.8,(255,255,255),2,cv2.LINE_AA)
     cv2.imshow("Age_Gender",frame)
     k=cv2.waitKey(10)
     if k==ord('q'):
